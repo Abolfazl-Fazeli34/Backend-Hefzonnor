@@ -10,6 +10,7 @@ exam_json/
 quran_fixture/
 exam_json.zip
 
+convert_fixture.py
 generate_fonts.py
 python.py
 script.py
