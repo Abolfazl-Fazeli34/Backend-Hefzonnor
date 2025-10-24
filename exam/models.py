@@ -1,5 +1,4 @@
 from django.conf import settings
-from django.contrib.postgres.fields import ArrayField
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models, connection
 
@@ -136,7 +135,7 @@ class OrderingParticipation(models.Model):
 
 class OrderingChunk(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name='chunks')
-    correct_order = ArrayField(models.CharField(max_length=200))
+    correct_order = models.JSONField(models.CharField(max_length=200))
     step_index = models.PositiveIntegerField()
 
 
@@ -151,24 +150,15 @@ class MatchingParticipation(models.Model):
 class MatchingChunk(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name='matching_chunks')
     step_index = models.PositiveIntegerField()
-    left_items = ArrayField(
-        base_field=models.JSONField(),
-    )
-    right_items = ArrayField(
-        base_field=models.JSONField(),
-    )
-    correct_matches = ArrayField(
-        base_field=ArrayField(
-            base_field=models.CharField(max_length=20),
-            size=2
-        ),
-    )
+    left_items = models.JSONField()
+    right_items = models.JSONField()
+    correct_matches = models.JSONField()
 
 
 class MatchingParticipationChunkProgress(models.Model):
     participation = models.ForeignKey(MatchingParticipation, on_delete=models.CASCADE, related_name='chunk_progress')
     chunk = models.ForeignKey(MatchingChunk, on_delete=models.CASCADE)
-    matched_pairs = ArrayField(ArrayField(base_field=models.CharField(max_length=20), size=2))
+    matched_pairs = models.JSONField()
 
     class Meta:
         unique_together = ('participation', 'chunk')

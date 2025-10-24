@@ -99,15 +99,23 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'hefzonnoor',
+        'USER': 'postgres',
+        'PASSWORD': '12345678',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    },
+    'mysql': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'myprojectdb',       # نام دیتابیس
-        'USER': 'myuser',            # نام کاربر
-        'PASSWORD': 'mypassword',    # رمز عبور کاربر
-        'HOST': 'localhost',         # اگر روی همان سیستم است
-        'PORT': '3306',              # پورت پیش‌فرض MySQL
+        'NAME': 'hefzonnor',
+        'USER': 'mysql',
+        'PASSWORD': '87654321',
+        'HOST': 'localhost',
+        'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            'charset': 'utf8mb4'
+            'charset': 'utf8mb4',
         },
     }
 }
