@@ -25,8 +25,12 @@ SECRET_KEY = 'django-insecure-o$-_64b5eea5u%&39m0daq_c)w3%74ivl52f*!a!swhdg-9cjx
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = False
+
 
 ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['web.hefzonnoor.ir', '89.32.249.147']
+
 
 INTERNAL_IPS = [
     '127.0.0.1',
@@ -99,14 +103,6 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hefzonnoor',
-        'USER': 'postgres',
-        'PASSWORD': '12345678',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    },
-    'mysql': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'hefzonnor',
         'USER': 'mysql',
@@ -120,6 +116,20 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'ytxeaprn_hefzonnor_db',
+#         'USER': 'ytxeaprn_mysql_db',
+#         'PASSWORD': ']XVKm%z#G)e(-Xls',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#         'OPTIONS': {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#             'charset': 'utf8mb4',
+#         },
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -290,3 +300,12 @@ LOGGING = {
         },
     },
 }
+
+# i6nC*3bFkR6WI[h[
+# i6nC*3bFkR6WI[h[
+# ytxeaprn_mysql
+# ytxeaprn_hefzonnor
+# کاربر «ytxeaprn_mysql» به پایگاه داده «ytxeaprn_hefzonnor» اضافه شد.
+# hefzonnor_db
+# mysql_db
+# ]XVKm%z#G)e(-Xls

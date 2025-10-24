@@ -5,6 +5,7 @@ venv/
 ENV/
 env/
 
+quran_sql/
 quran_json/
 exam_json/
 quran_fixture/
