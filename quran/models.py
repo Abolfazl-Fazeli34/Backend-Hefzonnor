@@ -189,16 +189,6 @@ class TranslationAudio(models.Model):
         verbose_name = 'فایل صوتی ترجمه'
         verbose_name_plural = 'فایل‌های صوتی ترجمه'
 
-class UnwantedWord(models.Model):
-    word = models.CharField(max_length=100, unique=True, verbose_name='کلمه بی‌اهمیت')
-
-    class Meta:
-        verbose_name = 'کلمه بی‌اهمیت'
-        verbose_name_plural = 'کلمات بی‌اهمیت'
-
-    def __str__(self):
-        return self.word
-    
 
 
 class SearchTable(models.Model):

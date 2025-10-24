@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import (
     Surah, VerseText, Verse, Qari, Word, Translator, VerseTranslation,
     WordMeaning, Root, VerseRootIndex, Tafseer, TranslationAudio,
-    UnwantedWord, WordSearchTableMV
+    WordSearchTableMV
 )
 
 @admin.register(Surah)
@@ -84,12 +84,6 @@ class TranslationAudioAdmin(admin.ModelAdmin):
     list_display = ('custom_id', 'translator', 'surah', 'from_aya', 'to_aya', 'first_type')
     list_filter = ('translator', 'surah')
     search_fields = ('first_type',)
-
-
-@admin.register(UnwantedWord)
-class UnwantedWordAdmin(admin.ModelAdmin):
-    list_display = ('word',)
-    search_fields = ('word',)
 
 
 @admin.register(WordSearchTableMV)
